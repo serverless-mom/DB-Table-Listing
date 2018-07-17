@@ -12,6 +12,7 @@ module.exports = async message => {
 
   try {
     const records = await client('accounts').select('name','id');
+    console.dir(records)
     
     return records.map(record => [record.name, record.id]);
   } finally {
