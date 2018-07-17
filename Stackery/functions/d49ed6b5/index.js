@@ -8,7 +8,7 @@ module.exports = async message => {
   const client = knex(connection);
 
   try {
-    await client.raw("INSERT IGNORE INTO accounts (name,id) VALUES ('Stackery','37')");
+    await client.seed.run();
   } catch (err) {
     console.error(err.stack);
     return {'success':false};
