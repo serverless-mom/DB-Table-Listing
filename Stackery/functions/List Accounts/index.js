@@ -13,7 +13,7 @@ module.exports = async message => {
   try {
     const records = await client('accounts').select('name','id');
     
-    return records.map(record => record.name);
+    return records.map(record => [record.name, record.id]);
   } finally {
     client.destroy();
   }
