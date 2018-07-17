@@ -86,7 +86,7 @@
       "outputs": 1,
       "memorySize": 3008,
       "timeout": 30,
-      "runtime": "nodejs",
+      "runtime": "nodejs8",
       "location": "inline",
       "envVars": {},
       "entryPoint": "",

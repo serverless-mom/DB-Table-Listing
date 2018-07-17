@@ -1,5 +1,5 @@
-module.exports = function handler(message, context, callback) {
+module.exports = async message => {
   console.dir(message);
 
-  callback(null, {});
+  return {};
 }
