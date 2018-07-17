@@ -11,7 +11,7 @@ module.exports = async message => {
   const client = knex(connection);
 
   try {
-    const records = await client('accounts').select('name');
+    const records = await client('accounts').select('name','id');
     
     return records.map(record => record.name);
   } finally {
