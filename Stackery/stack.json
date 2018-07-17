@@ -88,7 +88,10 @@
       "timeout": 30,
       "runtime": "nodejs8",
       "location": "inline",
-      "envVars": {},
+      "envVars": {
+        "CONNECTION": "production",
+        "DB_PASSWORD": "${config.dbPassword}"
+      },
       "entryPoint": "",
       "wires": [
         [
