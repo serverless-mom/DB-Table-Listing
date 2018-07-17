@@ -8,7 +8,8 @@ module.exports = async message => {
   const client = knex(connection);
 
   try {
-    await client.seed.run();
+    await client('accounts').insert({'name':'shiroCorp'});
+
   } catch (err) {
     console.error(err.stack);
     return {'success':false};
