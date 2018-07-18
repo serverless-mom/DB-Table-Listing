@@ -11,10 +11,10 @@ module.exports = async message => {
   const client = knex(connection);
 
   try {
-    const records = await client('accounts').select('name','id');
+    const records = await client('accounts').select();
     console.dir(records)
     
-    return records.map(record => [record.name, record.id]);
+    return records;
   } finally {
     client.destroy();
   }
