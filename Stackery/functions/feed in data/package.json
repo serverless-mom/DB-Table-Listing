@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
+    "@epsagon/epsagon": "^0.1.15",
     "cfn-custom-resource": "^4.0.2",
     "clone": "^2.1.1",
     "knex": "^0.14.6",
