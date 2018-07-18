@@ -8,11 +8,8 @@ module.exports = async message => {
   const client = knex(connection);
 
   try {
-    await client.schema.table('accounts', (table)=>{
-      table.string('clout')
-    })
-    await client('accounts').insert({'name':'tonkotsuInc'},{'name':'Fishbulb'});
-    await client('accounts').update('clout', 'moderate')
+
+    await client('accounts').insert({'name':'CosaNostraPizza','clout':'high'});
 
 
   } catch (err) {
