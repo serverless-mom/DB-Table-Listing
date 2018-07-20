@@ -9,6 +9,7 @@ const connection = require('knexfile')[connectionName];
  */
 module.exports = async message => {
   const client = knex(connection);
+  console.dir(message)
 
   try {
     const records = await client('accounts').select();
