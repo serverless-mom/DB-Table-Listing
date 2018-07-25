@@ -18,6 +18,29 @@ module.exports = async message => {
   try {
     const records = await client('accounts').select();
     console.dir(records)
+    let header = ''
+    let headingsArray = Object.keys(records[0])
+    if (headingsArray.length){
+      headingsArray.forEach(headerKey =>{
+        header += `<th>${headerKey}</th>`
+      })
+      let rows = []
+      records.forEach(item => {
+        let recordRow = ''
+        headingsArray.forEach(headerKey =>{
+          recordRow += `<td>${item[headerKey]}</td>`
+        })
+        rows.push(`<tr>${recordRow}</tr>`);
+      })
+    }
+
+    let htmlTable = `<table class='table table-striped' style='display: none'>
+    <tr>${header}</tr>
+    ${rows.join('')}
+</table>`
+
+
+
     
     
   // Build an HTTP response.
@@ -26,7 +49,7 @@ module.exports = async message => {
     headers: {
       "Content-Type": "text/html"
     },
-    body: responseBody
+    body: htmlTable
   };
 
   return response;
