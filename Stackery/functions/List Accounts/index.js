@@ -14,9 +14,10 @@ const connection = require('knexfile')[connectionName];
 module.exports = async message => {
   const client = knex(connection);
   console.dir(message)
+  let table = message.pathParameters.table
 
   try {
-    const records = await client('accounts').select();
+    const records = await client(table).select();
     console.dir(records)
     let header = ''
     let rows = []
@@ -35,10 +36,26 @@ module.exports = async message => {
       })
     }
 
-    let htmlTable = `<table class='table table-striped' style='display: none'>
+    let htmlTable = `
+    
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>DynamoDB table - ${table}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous'>
+  </head>
+  <body>  
+    <table class='table table-striped' style='display: none'>
     <tr>${header}</tr>
     ${rows.join('')}
-</table>`
+</table>
+</body>
+</html>
+
+`
 
 
 
