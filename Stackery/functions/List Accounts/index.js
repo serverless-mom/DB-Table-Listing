@@ -19,12 +19,13 @@ module.exports = async message => {
     const records = await client('accounts').select();
     console.dir(records)
     let header = ''
+    let rows = []
     let headingsArray = Object.keys(records[0])
     if (headingsArray.length){
       headingsArray.forEach(headerKey =>{
         header += `<th>${headerKey}</th>`
       })
-      let rows = []
+
       records.forEach(item => {
         let recordRow = ''
         headingsArray.forEach(headerKey =>{
