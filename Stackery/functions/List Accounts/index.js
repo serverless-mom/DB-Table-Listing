@@ -36,9 +36,8 @@ module.exports = async message => {
       })
     }
 
-    let htmlTable = `
-    
-<!DOCTYPE html>
+    let htmlTable = `<!DOCTYPE html>
+    <?xml version="1.0" encoding="UTF-8"?>
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
@@ -53,9 +52,7 @@ module.exports = async message => {
     ${rows.join('')}
 </table>
 </body>
-</html>
-
-`
+</html>`
 
 
 
