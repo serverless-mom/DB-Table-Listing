@@ -64,20 +64,6 @@
           "5cc4816b"
         ]
       ]
-    },
-    {
-      "id": "d168171c",
-      "type": "objectStore",
-      "x": 355,
-      "y": 395,
-      "width": 100,
-      "height": 30,
-      "name": "FrontEnd",
-      "publicPermissions": "read",
-      "websiteHosting": true,
-      "wires": [
-        []
-      ]
     }
   ]
 }
