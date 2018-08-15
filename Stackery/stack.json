@@ -32,7 +32,10 @@
       "location": "inline",
       "envVars": {
         "CONNECTION": "production",
-        "DB_PASSWORD": "${config.dbPassword}"
+        "DB_PASSWORD": "${config.dbPassword}",
+        "ROOKOUT_AGENT_HOST": "cloud.agent.rookout.com",
+        "ROOKOUT_AGENT_PORT": "443",
+        "ROOKOUT_TOKEN": "d28fe0cf22dc47d6c2c3c1dc9c7f1bfae9cb26ac8c5997294aba5e5cff0ed7bc"
       },
       "entryPoint": "",
       "wires": [
