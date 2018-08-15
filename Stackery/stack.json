@@ -60,7 +60,7 @@
       "width": 100,
       "height": 30,
       "name": "",
-      "path": "/{table}",
+      "path": "/raw/{table}",
       "method": "GET",
       "wires": [
         [
